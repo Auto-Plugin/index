@@ -1,0 +1,1 @@
+import{_ as i,c as a,ae as t,o as n}from"./chunks/framework.DEXvqjEZ.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"use.md","filePath":"use.md"}'),h={name:"use.md"};function l(p,s,k,e,d,E){return n(),a("div",null,s[0]||(s[0]=[t("",10)]))}const o=i(h,[["render",l]]);export{g as __pageData,o as default};
