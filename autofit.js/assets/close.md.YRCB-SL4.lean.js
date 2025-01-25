@@ -1,0 +1,1 @@
+import{_ as s,c as a,ae as i,o as e}from"./chunks/framework.DEXvqjEZ.js";const f=JSON.parse('{"title":"关闭 autofit.js 造成的影响","description":"","frontmatter":{},"headers":[],"relativePath":"close.md","filePath":"close.md"}'),o={name:"close.md"};function l(c,t,n,p,r,d){return e(),a("div",null,t[0]||(t[0]=[i("",4)]))}const h=s(o,[["render",l]]);export{f as __pageData,h as default};
