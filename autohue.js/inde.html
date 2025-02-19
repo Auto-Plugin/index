@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://camo.githubusercontent.com/1aa77111d5ac2b1c7d8d4d97e217db61758c7f971d521145d08c283f9502ddbe/68747470733a2f2f6175746f2d706c7567696e2e6769746875622e696f2f696e6465782f646570656e64656e732f69636f2e737667"
+      type="image/x-icon" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4625537_jnvyg4zq63.css" />
+    <script src="https://unpkg.com/autohue.js@1.0.0/dist/autohue.iife.js"></script>
+    <title>autohue.js</title>
+  </head>
+  <body>
+    <div class="body">
+      <div class="imgItem">
+        <div class="origin"><div class="img"><h2>原图</h2></div></div>
+        <div class="autohue">
+          <div class="leftCover"></div>
+          <div class="img"><h2>autohue.js</h2></div>
+          <div class="rightCover"></div>
+        </div>
+      </div>
+      <div class="imgItem">
+        <div class="origin"><img src="./imgs/background-6360868_1280.png" alt="" class="img" /></div>
+        <div class="autohue" id="background-6360868_1280.png">
+          <div class="leftCover"></div>
+          <img src="./imgs/background-6360868_1280.png" alt="" class="img" />
+          <div class="rightCover"></div>
+        </div>
+      </div>
+      <div class="imgItem">
+        <div class="origin"><img src="./imgs/banner-1033925_1280.jpg" alt="" class="img" /></div>
+        <div class="autohue" id="banner-1033925_1280.jpg">
+          <div class="leftCover"></div>
+          <img src="./imgs/banner-1033925_1280.jpg" alt="" class="img" />
+          <div class="rightCover"></div>
+        </div>
+      </div>
+      <div class="imgItem">
+        <div class="origin"><img src="./imgs/butterfly-1432308_1280.jpg" alt="" class="img" /></div>
+        <div class="autohue" id="butterfly-1432308_1280.jpg">
+          <div class="leftCover"></div>
+          <img src="./imgs/butterfly-1432308_1280.jpg" alt="" class="img" />
+          <div class="rightCover"></div>
+        </div>
+      </div>
+      <div class="imgItem">
+        <div class="origin"><img src="./imgs/flower-9221176_1280.jpg" alt="" class="img" /></div>
+        <div class="autohue" id="flower-9221176_1280.jpg">
+          <div class="leftCover"></div>
+          <img src="./imgs/flower-9221176_1280.jpg" alt="" class="img" />
+          <div class="rightCover"></div>
+        </div>
+      </div>
+      <div class="imgItem">
+        <div class="origin"><img src="./imgs/nature-2531761_1280.jpg" alt="" class="img" /></div>
+        <div class="autohue" id="nature-2531761_1280.jpg">
+          <div class="leftCover"></div>
+          <img src="./imgs/nature-2531761_1280.jpg" alt="" class="img" />
+          <div class="rightCover"></div>
+        </div>
+      </div>
+      <div class="intro">
+        <h2>autohue.js</h2>
+        <p>让你的图片和背景融为一体</p>
+        <p>autohue.js 是一个基于 JavaScript 的图片背景色提取库，它可以帮助你提取图片的主要颜色、四条边的颜色，你可以用这些颜色完成惊艳的效果！</p>
+        <p>
+          GitHub 源码：
+          <a class="iconfont icon-github" href="https://github.com/Auto-Plugin/autohue.js"></a>
+        </p>
+        <p>
+          本页源码：
+          <a class="iconfont icon-yuandaima5" href="https://github.com/Auto-Plugin/index/tree/main/autohue.js/" target="_blank"></a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const imgs = ['background-6360868_1280.png', 'banner-1033925_1280.jpg', 'butterfly-1432308_1280.jpg', 'flower-9221176_1280.jpg', 'nature-2531761_1280.jpg']
+  const dir = './imgs/'
+  for (let item of imgs) {
+    autohue(dir + item, { threshold: { primary: 10, left: 1, right: 1 } }).then((res) => {
+      const bgColor = `linear-gradient(90deg, ${res.backgroundColor.left}, ${res.backgroundColor.right})`
+      const hueBox = document.getElementById(`${item}`)
+      hueBox.children[0].style.background = `linear-gradient(90deg,${res.backgroundColor.left},98%, transparent)`
+      hueBox.children[2].style.background = `linear-gradient(-90deg,${res.backgroundColor.right},98%, transparent)`
+    })
+  }
+</script>
