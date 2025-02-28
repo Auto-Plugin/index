@@ -85,8 +85,8 @@
     autohue(dir + item, { threshold: { primary: 10, left: 1, right: 1 } }).then((res) => {
       const bgColor = `linear-gradient(90deg, ${res.backgroundColor.left}, ${res.backgroundColor.right})`
       const hueBox = document.getElementById(`${item}`)
-      hueBox.children[0].style.background = `linear-gradient(90deg,${res.backgroundColor.left},98%, transparent)`
-      hueBox.children[2].style.background = `linear-gradient(-90deg,${res.backgroundColor.right},98%, transparent)`
+      hueBox.children[0].style.background = `linear-gradient(90deg,${res.backgroundColor.left} 50%, transparent 60%)`
+      hueBox.children[2].style.background = `linear-gradient(-90deg,${res.backgroundColor.right} 50%, transparent 60%)`
     })
   }
 </script>
